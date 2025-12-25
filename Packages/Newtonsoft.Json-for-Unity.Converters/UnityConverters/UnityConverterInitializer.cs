@@ -81,6 +81,7 @@ namespace Newtonsoft.Json.UnityConverters
 
         private static void UpdateDefaultSettings()
         {
+            return;
             if (shouldAddConvertsToDefaultSettings)
             {
                 if (JsonConvert.DefaultSettings == null)

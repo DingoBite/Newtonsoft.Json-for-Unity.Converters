@@ -24,7 +24,7 @@ namespace Newtonsoft.Json.UnityConverters
 
             if (member.GetCustomAttribute<SerializeField>() != null)
             {
-                jsonProperty.Ignored = false;
+                jsonProperty.Ignored = jsonProperty.Ignored;
                 jsonProperty.Writable = CanWriteMemberWithSerializeField(member);
                 jsonProperty.Readable = CanReadMemberWithSerializeField(member);
                 jsonProperty.HasMemberAttribute = true;
