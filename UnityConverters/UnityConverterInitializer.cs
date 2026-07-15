@@ -36,6 +36,7 @@ namespace Newtonsoft.Json.UnityConverters
 {
     public static class UnityConverterInitializer
     {
+        private static readonly bool DefaultSettingsInjectionEnabled = false;
         private static bool _shouldAddConvertsToDefaultSettings = true;
 
         /// <summary>
@@ -81,7 +82,9 @@ namespace Newtonsoft.Json.UnityConverters
 
         private static void UpdateDefaultSettings()
         {
-            return;
+            if (!DefaultSettingsInjectionEnabled)
+                return;
+
             if (shouldAddConvertsToDefaultSettings)
             {
                 if (JsonConvert.DefaultSettings == null)
